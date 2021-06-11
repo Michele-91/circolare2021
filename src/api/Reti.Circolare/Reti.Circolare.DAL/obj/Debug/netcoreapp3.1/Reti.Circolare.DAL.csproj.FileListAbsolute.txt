@@ -1,0 +1,9 @@
+C:\Users\spinemi1\Desktop\Circolare2021\src\api\Reti.Circolare\Reti.Circolare.DAL\bin\Debug\netcoreapp3.1\Reti.Circolare.DAL.deps.json
+C:\Users\spinemi1\Desktop\Circolare2021\src\api\Reti.Circolare\Reti.Circolare.DAL\bin\Debug\netcoreapp3.1\Reti.Circolare.DAL.dll
+C:\Users\spinemi1\Desktop\Circolare2021\src\api\Reti.Circolare\Reti.Circolare.DAL\bin\Debug\netcoreapp3.1\Reti.Circolare.DAL.pdb
+C:\Users\spinemi1\Desktop\Circolare2021\src\api\Reti.Circolare\Reti.Circolare.DAL\obj\Debug\netcoreapp3.1\Reti.Circolare.DAL.csprojAssemblyReference.cache
+C:\Users\spinemi1\Desktop\Circolare2021\src\api\Reti.Circolare\Reti.Circolare.DAL\obj\Debug\netcoreapp3.1\Reti.Circolare.DAL.AssemblyInfoInputs.cache
+C:\Users\spinemi1\Desktop\Circolare2021\src\api\Reti.Circolare\Reti.Circolare.DAL\obj\Debug\netcoreapp3.1\Reti.Circolare.DAL.AssemblyInfo.cs
+C:\Users\spinemi1\Desktop\Circolare2021\src\api\Reti.Circolare\Reti.Circolare.DAL\obj\Debug\netcoreapp3.1\Reti.Circolare.DAL.csproj.CoreCompileInputs.cache
+C:\Users\spinemi1\Desktop\Circolare2021\src\api\Reti.Circolare\Reti.Circolare.DAL\obj\Debug\netcoreapp3.1\Reti.Circolare.DAL.dll
+C:\Users\spinemi1\Desktop\Circolare2021\src\api\Reti.Circolare\Reti.Circolare.DAL\obj\Debug\netcoreapp3.1\Reti.Circolare.DAL.pdb

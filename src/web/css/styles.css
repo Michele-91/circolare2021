@@ -1,0 +1,43 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  /* background-color: rgb(104, 104, 104); */
+  background-color: rgb(179, 218, 181);
+}
+
+.container {
+
+}
+.sub-menu-wrapper {
+    background-color: blue;
+}
+
+.sub-menu {
+    /* background-color: orange; */
+}
+
+.create-button,
+.list-button,
+.delete-button {
+    /* border: 3px solid rgb(255, 255, 255); */
+    border: 3px solid rgba(118, 250, 184, 0);
+}
+
+.create-button:hover,
+.list-button:hover,
+.delete-button:hover {
+    border: 3px solid rgb(0, 0, 0);
+}
+
+.hidden {
+    display: none;
+}
+
+a.nav-link {
+    font-size: large;
+}
+
+.selected-menu_button {
+    background-color: rgb(197, 182, 50);
+}

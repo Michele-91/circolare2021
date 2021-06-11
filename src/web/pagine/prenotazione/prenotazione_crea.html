@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Front-End Percorso Circolare">
+    <meta name="author" content="Michele Spinelli">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/b981384ec5.js" crossorigin="anonymous"></script>
+    <link href="../../css/styles.css" type="text/css" rel="stylesheet">
+    <title>Prenotazione - Crea</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="../../index.html">
+                <img src="../../img/LogoReti.png" alt="Logo Reti"
+                class="d-inline-block align-top">
+                <span class="hidden">Percorso Circolare</span>
+              </a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li>
+                        <a class="nav-link" href="../../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="../risorsa/risorsa_crea.html">Risorsa</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="../edificio/edificio_crea.html">Edificio</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="../sala/sala_crea.html">Sala</a>
+                    </li>
+                    <li class="selected-menu_button">
+                        <a class="nav-link" href="#">Prenotazione</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container pt-5">
+        <div class="flex-column d-flex flex-md-row justify-content-around flex-align-center p-5 m-5 sub-menu">
+            <button type="button" class="btn-success col ml-5 mr-5 p-1 create-button">
+                <i class="fas fa-plus-square mr-2"></i>
+                Crea
+            </button>
+            <button onclick="window.location.href='./prenotazione_mostra.html'" type="button" class="btn-primary col ml-5 mr-5 p-1 list-button">
+                <i class="fas fa-clipboard-list mr-2"></i>
+                Mostra Tutti
+            </button>
+            <!-- <button onclick="window.location.href='./prenotazione_elimina.html'" type="button" class="btn-danger col ml-5 mr-5 p-1 delete-button">
+                <i class="fas fa-trash-alt"></i>
+                Elimina
+            </button> -->
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <form class="align-center col-5">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Descrizione</label>
+                <input type="nome" class="form-control" id="nome_prenotazione" aria-describedby="nomePrenotazione">
+            </div>
+            <div class="mb-3">
+                <label for="risorsaprenotazione" class="form-label">Risorsa</label>
+                <input class="form-control" name="opzioni-risorsaprenotazione" list="opzioni-risorsaprenotazione" id="risorsaprenotazione"
+                    placeholder="Scrivi per filtrare le opzioni disponibili...">
+                <datalist id="opzioni-risorsaprenotazione">
+                </datalist>
+            </div>
+            <div class="mb-3">
+                <label for="salaprenotazione" class="form-label">Sala</label>
+                <input class="form-control" name="opzioni-salaprenotazione" list="opzioni-salaprenotazione" id="salaprenotazione"
+                    placeholder="Scrivi per filtrare le opzioni disponibili...">
+                <datalist id="opzioni-salaprenotazione">
+                </datalist>
+            </div>
+            <div class="mb-3">
+                <label for="prenotazione-data-inizio" class="form-label">Inizio</label>
+                <input type="datetime-local" class="form-control" id="prenotazione-data-inizio" name="prenotazione-inizio" min="" aria-describedby="dataInizioPrenotazione">
+            </div>
+            <div class="mb-3">
+                <label for="prenotazione-data-fine" class="form-label">Fine</label>
+                <input type="datetime-local" class="form-control" id="prenotazione-data-fine" step=1 name="prenotazione-fine" min="" aria-describedby="dataFinePrenotazione">
+            </div>
+            
+            <div class="row d-flex justify-content-center">
+                <button id="submit_prenotazione" type="submit" class="btn btn-primary col-4 mt-4">Submit</button>
+            </div>
+        </form>
+    </div>
+    <br><br><br><br><br>
+</body>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../node_modules/moment/min/moment.min.js"></script>
+<!-- <script src="./scripts/index.js"></script> -->
+<script src="../../js/prenotazioneCrea.js"></script>
+
+</html>
