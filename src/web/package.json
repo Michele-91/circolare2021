@@ -5,9 +5,6 @@
   "main": "index.js",
   "scripts": {
     "serve": "http-server",
-    "build": "tsc -p .",
-    "watch": "tsc-watch --onsuccess \"node js/index.js\"",
-    "start": "npm run build && npm run serve",
     "liveCompile": "tsc --init && tsc -w"
   },
   "keywords": [],
