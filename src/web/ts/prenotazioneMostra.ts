@@ -108,7 +108,6 @@ function prenotazioni_mostra_importaPrenotazioniPerDettaglio(risorse, edifici, s
         type: "GET",
         dataType: "json",
     }).done(function (response) {
-        console.log("filtrato: " + filtrato);
         prenotazioni_popolaTabella(response, risorse, edifici, sale, filtrato);
     }).fail(function (xhr) {
         alert("Errore: non è stato possibile recuperare la lista delle prenotazioni!");
@@ -119,17 +118,6 @@ function prenotazioni_mostra_importaPrenotazioniPerDettaglio(risorse, edifici, s
 let prenotazioniGlobali = [];
 
 function prenotazioni_popolaTabella(prenotazioni, risorse, edifici, sale, filtrato: boolean) {
-    // var prenotazioniFiltrate = [];
-    // prenotazioniFiltrate = prenotazioni_mostra_filtraRisultati();
-    // if (prenotazioniFiltrate && prenotazioniFiltrate.length > 0) {
-    //     $('tbody').children().remove();
-    //     // prenotazioniScelte = prenotazioni_mostra_importaPrenotazioniPerFiltro();
-    //     prenotazioniScelte = prenotazioniFiltrate;
-    // } else {
-    //     prenotazioniScelte = prenotazioni_mostra_importaPrenotazioniPerFiltro();
-    // }
-    // // console.log("prenotazioni: " + prenotazioni);
-    // console.log("prenotazioniFiltrate: " + prenotazioniFiltrate);
     if (filtrato) {
         let input = $("#testo-filtro-prenotazioni").val().toString();
         console.log("input: " + input);
@@ -231,51 +219,8 @@ function prenotazioni_mostra_filtraRisultati() {
         } else {
             prenotazioni_mostra_importaRisorse(false);
         }
-        // let input = $(this).val().toString();
-        //     let input = $("#testo-filtro-prenotazioni").val();
-        //     console.log("input: " + input);
-        //     $.ajax({
-        //         'async': false,
-        //         url: `http://localhost:42877/api/Prenotazione/Filter/${input}`,
-        //         type: "GET",
-        //         dataType: "json",
-        //     }).done(function (response) {
-        //         prenotazioni_mostra_importaRisorse();
-        //     }).fail(function (xhr) {
-        //         alert("Errore: non è stato possibile recuperare la lista delle prenotazioni!");
-        //         console.log(`Error - ${xhr.statusText} (${xhr.status}): ${xhr.responseText}`);
-        //     })
     })
 }
-
-// function prenotazioni_mostra_filtraRisultati() {
-//     let prenotazioni = prenotazioni_mostra_importaPrenotazioniPerFiltro();
-//     let prenotazioniFiltrate = [];
-//     $("#filtra_prenotazione_mostra").on("input", function (e) {
-//         let input = $(this).val().toString();
-//         if (input.length > 0) {
-//             // let table = $('tbody').children();
-//             // for (let i = 0; i < table.length; i++) {
-//             //     if (!table[i].textContent.includes(input)) {
-//             //         table[i].remove();
-//             //     }
-//             // }
-//             let filtroPrenotazioni = [];
-//             for (let p = 0; p < prenotazioni.length; p++) {
-//                 if (prenotazioni[p].descrizione.includes(input)) {
-//                     filtroPrenotazioni.push(prenotazioni[p]);
-//                     console.log(filtroPrenotazioni);
-//                 }
-//             }
-//             prenotazioniFiltrate = filtroPrenotazioni;
-//         } else {
-//             prenotazioniFiltrate = prenotazioni;
-//         }
-//         console.log("223: " + prenotazioniFiltrate);
-//     })
-//     // return prenotazioniFiltrate ? prenotazioniFiltrate : [];
-//     return prenotazioniFiltrate;
-// }
 
 function prenotazioni_eliminaPrenotazione(id: string) {
     console.log(id);

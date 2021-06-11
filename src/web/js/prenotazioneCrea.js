@@ -8,6 +8,8 @@ function prenotazioni_crea_impostaDataMinima() {
         let dataInizioMinima = turnIntoISOString(new Date());
         return dataInizioMinima;
     });
+    // imposta automaticamente la data di inizio all'apertura della pagina, in base alla data attuale
+    // commentato perché creava problemi alla validazione del form dopo il submit
     // .prop('value', function () {
     //     let dataInizioAttuale = turnIntoISOString(new Date());
     //     return dataInizioAttuale;

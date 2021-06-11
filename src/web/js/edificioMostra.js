@@ -30,7 +30,6 @@ function importaEdifici(sale) {
         let table = $('tbody');
         let count = 1;
         let oddOrEven = "";
-        // console.log(response);
         for (let obj of response) {
             count++;
             if (count % 2 == 0) {
@@ -40,7 +39,6 @@ function importaEdifici(sale) {
                 oddOrEven = `<tr class="odd">`;
             }
             console.log(response);
-            // console.log(JSON.stringify(listaSale));
             let saleEdificio = "";
             saleEdificio += listaSale.filter(s => s.edificioId == obj.id).map(o => o.nome);
             console.log(saleEdificio);
