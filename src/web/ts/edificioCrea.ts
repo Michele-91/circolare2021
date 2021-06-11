@@ -7,9 +7,6 @@ $('#submit_edificio').on('click', (e) => {
     nome = $('#nome_edificio').val().toString();
     indirizzo = $('#indirizzo_edificio').val().toString();
     disponibile = $('#disponibile').prop("checked");
-    console.log("nome: " + nome);
-    console.log("indirizzo: " + indirizzo);
-    console.log("disponibile: " + disponibile);
     let obj = {
         nome: nome,
         indirizzo: indirizzo,
