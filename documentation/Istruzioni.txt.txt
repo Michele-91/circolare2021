@@ -1,0 +1,7 @@
+Istruzioni per l'apertura dell'applicazione:
+
+1) Aprire la soluzione Reti.Circolare.sln in Visual Studio e cliccare su "IIS Express".
+2) Aprire la cartella "web" con Visual Studio Code
+3) Aprire il terminale (dentro Visual Studio Code, o fuori) ma sempre all'interno della cartella
+   web, e scrivere "npm run serve". Questa azione farò partire la compilazione tramite libreria
+   di terze parti "http-server".
