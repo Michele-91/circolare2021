@@ -37,15 +37,14 @@ function creaSala(edificiEsistenti) {
     $('#submit_sala').on('click', (e,) => {
         e.preventDefault();
         let nome: string;
-        let edificioId: number;
         nome = $('#nome_sala').val().toString();
-        let edificioSelezionato = $("input[name=opzioni-edificio-per-sala]").val();
+        let edificioSelezionato = $("input[name=opzioni-edificio-per-sala]").val().toString();
         console.log("valore edificio: " + edificioSelezionato);
         if (nome && edificioSelezionato) {
-            let edificioPresenteNelDatabase = edificiEsistenti.some(ed => ed.nome == edificioSelezionato);
+            let edificioId: number;
+            let edificioPresenteNelDatabase = edificiEsistenti.some(ed => ed.nome.toLowerCase() == edificioSelezionato.toLowerCase());
             if(edificioPresenteNelDatabase) {
-                edificioId = edificiEsistenti.filter(e => e.nome == edificioSelezionato)[0].id;
-                console.log("edificioId: " + edificioId);
+                edificioId = edificiEsistenti.filter(e => e.nome.toLowerCase()  == edificioSelezionato.toLowerCase())[0].id;
                 let obj = {
                     nome: nome,
                     edificioId: edificioId
@@ -63,7 +62,7 @@ function creaSala(edificiEsistenti) {
                     console.log(`Error - ${xhr.statusText} (${xhr.status}): ${xhr.responseText}`);
                 })
             } else {
-                alert("Non puoi creare una sala in un edificio inesistente"); 
+                alert("Non puoi creare una sala in un edificio inesistente o non disponibile"); 
             }
         } else {
             alert("Devi riempire tutti i campi per poter effettuare l'operazione");

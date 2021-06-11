@@ -108,7 +108,7 @@ function prenotazioni_crea_validaRisultati(risorse, sale) {
         nomePrenotazioneSelezionato = $(this).val().toString();
     });
     $("input[name=opzioni-risorsaprenotazione]").on('change', function () {
-        risorsaSelezionata = $(this).val();
+        risorsaSelezionata = $(this).val().toString();
     });
     $("input[name=prenotazione-inizio]").on('change', function () {
         dataInizioSelezionata = $(this).val();
@@ -122,7 +122,19 @@ function prenotazioni_crea_validaRisultati(risorse, sale) {
     $('#submit_prenotazione').on('click', (e) => {
         e.preventDefault()
         if (risorsaSelezionata && nomePrenotazioneSelezionato && salaSelezionata && dataInizioSelezionata && dataFineSelezionata) {
-            prenotazioni_crea_submit(risorse, sale, nomePrenotazioneSelezionato, risorsaSelezionata, salaSelezionata, dataInizioSelezionata, dataFineSelezionata);
+            let risorsaEsiste = risorse.some(r => r.userName.toLowerCase() == risorsaSelezionata.toLowerCase());
+            let salaEsiste = sale.some(s => s.nome.toLowerCase() == salaSelezionata.toLowerCase());
+            if(risorsaEsiste && salaEsiste) {
+                prenotazioni_crea_submit(risorse, sale, nomePrenotazioneSelezionato, risorsaSelezionata, salaSelezionata, dataInizioSelezionata, dataFineSelezionata);
+            } else {
+                if(!risorsaEsiste && !salaEsiste) {
+                    alert("Le risorse e le sale scelti non possono essere inesistenti/disabilitate.\nSeleziona risorse e sale tra le opzioni disponibili")
+                } else if (!risorsaEsiste) {
+                    alert("Non è possibile creare una prenotazione per una risorsa inesistente o disabilitata.\nScegli una risorsa tra le opzioni disponibili");
+                } else if (salaEsiste) {
+                    alert("Non è possibile creare una prenotazione in una sala inesistente.\nScegli una sala tra le opzioni disponibili");
+                }
+            }
         } else {
             alert("Devi riempire tutti i campi per poter effettuare l'operazione");
         }
