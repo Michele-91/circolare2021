@@ -61,11 +61,10 @@ $(function () {
             $("#risorsa-modal-abilitato").html(abilitato);
         });
         $(".abilita-disabilita").on("click", function (e) {
-            // console.log(e.target.parentElement.parentElement.firstElementChild.textContent);
             let idUtente = e.target.parentElement.parentElement.firstElementChild.textContent;
             aggiornaStatoUtente(idUtente);
         });
-    }).fail(function (xhr, status, errorThrown) {
+    }).fail(function (xhr) {
         console.log("Errore: non è stato possibile recuperare la lista delle risorse!");
         console.log("Status: " + xhr.status);
         console.log("Error: " + xhr.statusText);
@@ -81,11 +80,9 @@ function aggiornaStatoUtente(id) {
         data: "{}"
     }).done(function (response) {
         location.reload();
-    }).fail(function (xhr, status, errorThrown) {
-        console.log("Errore: non è stato possibile aggiornate lo stato della risorsa!");
-        console.log("Status: " + xhr.status);
-        console.log("Error: " + xhr.statusText);
-        console.dir(xhr);
+    }).fail(function (xhr) {
+        alert("Errore: non è stato possibile aggiornate lo stato della risorsa!");
+        console.log(`Error - ${xhr.statusText} (${xhr.status}): ${xhr.responseText}`);
     });
 }
 //# sourceMappingURL=risorsaMostra.js.map

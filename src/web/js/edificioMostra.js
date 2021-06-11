@@ -7,10 +7,8 @@ $(function () {
     }).done(function (response) {
         importaEdifici(response);
     }).fail(function (xhr) {
-        console.log("Errore: non è stato possibile recuperare la lista degli edifici!");
-        console.log("Status: " + xhr.status);
-        console.log("Error: " + xhr.statusText);
-        console.dir(xhr);
+        alert("Errore: non è stato possibile recuperare la lista degli edifici!");
+        console.log(`Error - ${xhr.statusText} (${xhr.status}): ${xhr.responseText}`);
     });
 });
 function importaEdifici(sale) {
@@ -75,10 +73,8 @@ function importaEdifici(sale) {
             $("#edificio-modal-disponibile").html(dataDisponibile);
         });
     }).fail(function (xhr) {
-        console.log("Errore: non è stato possibile recuperare la lista degli edifici!");
-        console.log("Status: " + xhr.status);
-        console.log("Error: " + xhr.statusText);
-        console.dir(xhr);
+        alert("Errore: non è stato possibile recuperare la lista degli edifici!");
+        console.log(`Error - ${xhr.statusText} (${xhr.status}): ${xhr.responseText}`);
     });
 }
 //# sourceMappingURL=edificioMostra.js.map

@@ -1,21 +1,4 @@
-console.log("pagina di creazione risorse");
-// class Risorsa
-// {
-//     id: string
-//     nome: number;
-//     cognome: string;
-//     emailPersonale: string;
-//     abilitato: boolean;
-//     constructor(risorsa?: any) {
-//         if (risorsa != null) {
-//             this.id = risorsa.id;
-//             this.nome = risorsa.nome;
-//             this.cognome = risorsa.cognome;
-//             this.emailPersonale = risorsa.emailPersonale;
-//             this.abilitato = risorsa.abilitato;
-//         }
-//     }
-// }
+
 $('#submit').on('click', (e) => {
     let nome: string;
     let cognome: string;
@@ -32,12 +15,6 @@ $('#submit').on('click', (e) => {
         emailPersonale: emailPersonale,
         abilitato: abilitato
     }
-    console.log(JSON.stringify(obj));
-    // abilitato = $('#form-check-input').val().toString();
-    console.log("nome: " + nome);
-    console.log("cognome: " + cognome);
-    console.log("emailPersonale: " + emailPersonale);
-    console.log(abilitato);
     $.ajax({
         url: "http://localhost:42877/api/Risorsa/Add",
         contentType: "application/json",
@@ -46,19 +23,8 @@ $('#submit').on('click', (e) => {
         data: JSON.stringify(obj)
     }).done(function (response) {
         window.location.href='./risorsa_mostra.html';
-        // let form = $('form');
-        // form.after(`
-        //     <div id="responseContent">
-        //         <p class="userIdResp">UserId: ${response.userId}</p>
-        //         <p class="idResp">id: ${response.id}</p>
-        //         <p class="titleResp">title: ${response.title}</p>
-        //         <p class="bodyResp">body: ${response.body}</p>
-        //     </div>
-        // `);
-    }).fail(function (xhr, status, errorThrown) {
-        console.log("Errore: non è stato possibile creare la risorsa!");
-        console.log("Status: " + xhr.status);
-        console.log("Error: " + xhr.statusText);
-        console.dir(xhr);
+    }).fail(function (xhr) {
+        alert("Errore: non è stato possibile creare la risorsa!");
+        console.log(`Error - ${xhr.statusText} (${xhr.status}): ${xhr.responseText}`);
     })
 })

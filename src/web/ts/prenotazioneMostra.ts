@@ -22,7 +22,6 @@ function prenotazioni_mostra_importaPrenotazioniPerFiltro() {
         alert("Errore: non è stato possibile recuperare la lista delle prenotazioni!");
         console.log(`Error - ${xhr.statusText} (${xhr.status}): ${xhr.responseText}`);
     })
-    console.log("nuovoImportPrenotazioni: " + nuovoImportPrenotazioni);
     return nuovoImportPrenotazioni;
 }
 
@@ -205,7 +204,6 @@ function prenotazioni_pulsantiDettaglio() {
         $("#prenotazione-modal-fine").html(dataFine);
     });
     $(".pulsante-elimina-prenotazione").on("click", function (e) {
-        // console.log(e.target.parentElement.parentElement.firstElementChild.getAttribute("data-bs-id"));
         let idPrenotazione = e.target.parentElement.parentElement.firstElementChild.getAttribute("data-bs-id");
         prenotazioni_eliminaPrenotazione(idPrenotazione);
     })

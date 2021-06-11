@@ -7,11 +7,9 @@ $(function () {
         dataType: "json",
     }).done(function (response) {
         associaSalaAdEdificio(response);
-    }).fail(function (xhr, status, errorThrown) {
-        console.log("Errore: non è stato possibile recuperare la lista delle sale!");
-        console.log("Status: " + xhr.status);
-        console.log("Error: " + xhr.statusText);
-        console.dir(xhr);
+    }).fail(function (xhr) {
+        alert("Errore: non è stato possibile recuperare la lista delle sale!");
+        console.log(`Error - ${xhr.statusText} (${xhr.status}): ${xhr.responseText}`);
     })
 })
 
@@ -67,11 +65,9 @@ function submitSala(edificioSelezionato: any, edificiEsitenti: any[]) {
             data: JSON.stringify(obj)
         }).done(function (response) {
             window.location.href='./sala_mostra.html';
-        }).fail(function (xhr, status, errorThrown) {
-            console.log("Errore: non è stato possibile creare la sala!");
-            console.log("Status: " + xhr.status);
-            console.log("Error: " + xhr.statusText);
-            console.dir(xhr);
+        }).fail(function (xhr) {
+            alert("Errore: non è stato possibile creare la sala!");
+            console.log(`Error - ${xhr.statusText} (${xhr.status}): ${xhr.responseText}`);
         })
     })
 }

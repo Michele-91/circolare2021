@@ -23,11 +23,9 @@ $('#submit_edificio').on('click', (e) => {
         data: JSON.stringify(obj)
     }).done(function (response) {
         window.location.href = './edificio_mostra.html';
-    }).fail(function (xhr, status, errorThrown) {
-        console.log("Errore: non è stato possibile creare l'edificio!");
-        console.log("Status: " + xhr.status);
-        console.log("Error: " + xhr.statusText);
-        console.dir(xhr);
+    }).fail(function (xhr) {
+        alert("Errore: non è stato possibile creare l'edificio!");
+        console.log(`Error - ${xhr.statusText} (${xhr.status}): ${xhr.responseText}`);
     });
 });
 //# sourceMappingURL=edificioCrea.js.map
